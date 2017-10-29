@@ -7,13 +7,13 @@ pipeline {
       		sh 'ant -f build.xml -v'
 		echo "hello world"
 	      }
-	
-	post{
-	   always{
+	}
+    }
+	post {
+	   always {
 		archiveArtifacts artifacts: 'dist/.*jar', fingerprint: true
 		}
 	    }
   
 }
-}   
-}
+
